@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Covid-19 Image Classification App</title>
+
+    </head>
+    <body>
+        <h1>Covid-19 Image Classification App</h1>
+        <p>"Upload a Covid Image, and we will predict which it is"</p>
+        
+        {% if image %}
+        <img src="{{ image }}", alt="Uploaded_Image", style="max-width: 300px;" >
+        {% endif %}
+
+        <form method = "POST" enctype="multipart/form-data">
+            <input type="file", name="file", accept=".jpg, .png, .jpeg"><br><br>
+            <button type="submit">Upload & Predict</button>
+        </form>
+
+        {% if predicted_label %}
+            <p><b>Prediction: {{predicted_label}}</b></p>
+        {% endif %}
+    </body>
+
+
+
+
+</html>
